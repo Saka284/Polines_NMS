@@ -1,5 +1,10 @@
-// Inisialisasi peta
-var map = L.map('map').setView([-7.052120379739278, 110.4355867990092], 18); // Sesuaikan dengan lokasi kampus
+// Inisialisasi peta dengan batasan zoom in dan zoom out
+var map = L.map('map', {
+    center: [-7.052120379739278, 110.4355867990092],
+    zoom: 18, // Set awal zoom
+    minZoom: 18, // Batasan minimum zoom out
+    maxZoom: 19 // Batasan maksimum zoom in
+});
 
 var kiri = L.latLng(-7.054918957999227, 110.43151205599631);
 var kanan = L.latLng(-7.050757506597283, 110.43711227634674);
@@ -10,10 +15,10 @@ map.on('drag', function () {
     map.panInsideBounds(bounds, { animate: false });
 });
 
-// Tambahkan Tile Layer untuk peta
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 20,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+// Ganti Tile Layer dengan CartoDB tanpa label (menghilangkan nama jalan dan simbol)
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/light_nolabels/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
 }).addTo(map);
 
 var gedung_gks = L.polygon([
@@ -26,7 +31,6 @@ var gedung_gks = L.polygon([
     fillColor: 'rgb(182, 103, 255)', // Warna isi poligon
     fillOpacity: 0.5                 // Transparansi warna isi poligon
 }).addTo(map);
-
 
 // Tambahkan teks di atas gedung tanpa latar belakang menggunakan divIcon
 var teksGedung_gks = L.marker([-7.052358, 110.435002], { // Sesuaikan koordinat agar teks berada di tengah gedung
@@ -49,7 +53,7 @@ var gedung_direktur = L.polygon([
     fillOpacity: 0.5                 // Transparansi warna isi poligon
 }).addTo(map);
 
-var teksGedung_gks = L.marker([-7.052305, 110.435501], { // Sesuaikan koordinat agar teks berada di tengah gedung
+var teksGedung_direktur = L.marker([-7.052305, 110.435501], { // Sesuaikan koordinat agar teks berada di tengah gedung
     icon: L.divIcon({
         className: 'text-label',   // Nama kelas CSS untuk teks
         html: 'Gedung <br>Direktur',          // Teks yang ditampilkan
@@ -57,12 +61,6 @@ var teksGedung_gks = L.marker([-7.052305, 110.435501], { // Sesuaikan koordinat 
     }),
     interactive: false             // Nonaktifkan interaksi agar tidak dianggap sebagai marker
 }).addTo(map);
-
-// Tambahkan Marker
-// var terminal3Marker = L.marker([-7.052305548510228, 110.43497612938614]).addTo(map)
-//     .bindPopup('<b>G. Direktur</b><br>Polines.')
-//     .openPopup();
-
 
 // Fungsi untuk navigasi ke terminal yang berbeda
 function goToTerminal(terminalNumber) {
