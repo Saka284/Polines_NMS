@@ -59,6 +59,8 @@ export function initializeGedungDirektur(map) {
         interactive: false
     });
 
+    let currentLantai = 0;
+
     function updateFloorVisibility(lantai) {
         map.removeLayer(gedung_direktur);
         map.removeLayer(teksGedung_direktur);
@@ -66,6 +68,8 @@ export function initializeGedungDirektur(map) {
         map.removeLayer(lantai2_direktur);
         map.removeLayer(teksLantai1);
         map.removeLayer(teksLantai2);
+
+        currentLantai = lantai;
 
         switch (lantai) {
             case 0:
@@ -81,7 +85,7 @@ export function initializeGedungDirektur(map) {
             case 2:
                 map.addLayer(lantai2_direktur);
                 map.addLayer(teksLantai2);
-                map.setView([-7.052305, 110.435501], 20);
+                map.setView([-7.052305, 110.435501], 21);
                 break;
         }
     }
@@ -90,10 +94,8 @@ export function initializeGedungDirektur(map) {
         var currentZoom = map.getZoom();
         if (currentZoom < 20) {
             updateFloorVisibility(0);
-        } else if (currentZoom === 20) {
-            updateFloorVisibility(2);
-        } else if (currentZoom >= 21) {
-            updateFloorVisibility(1);
+        } else if (currentZoom === 20 && currentLantai !== 0) {
+            updateFloorVisibility(0);
         }
     });
 
@@ -104,7 +106,6 @@ export function initializeGedungDirektur(map) {
         });
     });
 
-    // Fungsi navigasi yang akan dikembalikan
     function navigateToGedungDirektur(lantai) {
         updateFloorVisibility(lantai);
     }
