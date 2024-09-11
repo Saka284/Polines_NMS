@@ -6,8 +6,8 @@ export function initializeGedungGKS(map) {
         [-7.052510, 110.435166],
         [-7.052499, 110.434868]
     ], {
-        color: 'rgb(132, 0, 255)',
-        fillColor: 'rgb(182, 103, 255)',
+        color: 'rgb(255,255,255)',
+        fillColor: 'rgb(162, 190, 227)',
         fillOpacity: 0.5
     }).addTo(map);
 
@@ -28,7 +28,7 @@ export function initializeGedungGKS(map) {
         [-7.052510, 110.435166],
         [-7.052499, 110.434868]
     ], {
-        color: 'rgb(0, 255, 0)',
+        color: 'rgb(106, 156, 137)',
         fillColor: 'rgb(255,255,255)',
         fillOpacity: 0.7
     });
@@ -39,7 +39,7 @@ export function initializeGedungGKS(map) {
         [-7.052510, 110.435166],
         [-7.052499, 110.434868]
     ], {
-        color: 'rgb(255, 0, 0)',
+        color: 'rgb(201, 104, 104)',
         fillColor: 'rgb(255,255,255)',
         fillOpacity: 0.7
     });
@@ -50,7 +50,7 @@ export function initializeGedungGKS(map) {
         [-7.052510, 110.435166],
         [-7.052499, 110.434868]
     ], {
-        color: 'rgb(0, 0, 255)',
+        color: 'rgb(34, 123, 148)',
         fillColor: 'rgb(255,255,255)',
         fillOpacity: 0.7
     });
@@ -58,7 +58,7 @@ export function initializeGedungGKS(map) {
     // Markers for floor labels
     var teksLantai3 = L.marker([-7.052358, 110.435002], {
         icon: L.divIcon({
-            className: 'text-label',
+            className: 'text-label-dua',
             html: 'Lantai 3',
             iconSize: [80, 20]
         }),
@@ -67,7 +67,7 @@ export function initializeGedungGKS(map) {
 
     var teksLantai2 = L.marker([-7.052358, 110.435002], {
         icon: L.divIcon({
-            className: 'text-label',
+            className: 'text-label-dua',
             html: 'Lantai 2',
             iconSize: [80, 20]
         }),
@@ -76,7 +76,7 @@ export function initializeGedungGKS(map) {
 
     var teksLantai1 = L.marker([-7.052358, 110.435002], {
         icon: L.divIcon({
-            className: 'text-label',
+            className: 'text-label-dua',
             html: 'Lantai 1',
             iconSize: [80, 20]
         }),
@@ -108,17 +108,17 @@ export function initializeGedungGKS(map) {
             case 1:
                 map.addLayer(lantai1_gks);
                 map.addLayer(teksLantai1);
-                map.setView([-7.052358, 110.435002], 21);
+                map.setView([-7.052358, 110.435002], 22);
                 break;
             case 2:
                 map.addLayer(lantai2_gks);
                 map.addLayer(teksLantai2);
-                map.setView([-7.052358, 110.435002], 21);
+                map.setView([-7.052358, 110.435002], 22);
                 break;
             case 3:
                 map.addLayer(lantai3_gks);
                 map.addLayer(teksLantai3);
-                map.setView([-7.052358, 110.435002], 21);
+                map.setView([-7.052358, 110.435002], 22);
                 break;
         }
     }
@@ -135,7 +135,7 @@ export function initializeGedungGKS(map) {
 
     // Click event to zoom into the building
     gedung_gks.on('click', function () {
-        map.flyTo([-7.052374, 110.434997], 19, {
+        map.flyTo([-7.052358, 110.435002], 19, {
             duration: 2,
             easeLinearity: 0.5,
         });

@@ -11,26 +11,25 @@ html {
 }
 
 .navbar {
-    z-index: 1100;
-    /* Pastikan navbar tetap berada di atas */
+    padding: 20px 0;
+    /* Sesuaikan padding untuk memperbesar navbar */
 }
 
-/* Memindahkan tombol ke bagian atas di bawah navbar */
+/* Gambar logo di navbar */
+.navbar-brand img {
+    height: 45px;
+    padding-left: 20px;
+}
+
 .bottom-buttons {
     position: absolute;
-    /* Untuk membuat tombol berada di atas peta */
-    top: 70px;
-    /* Atur jarak dari navbar */
+    top: 100px;
+    /* Beri jarak dari atas (sesuaikan sesuai kebutuhan) */
     left: 50%;
-    /* Untuk menempatkan tombol di tengah secara horizontal */
     transform: translateX(-50%);
-    /* Pastikan posisi benar-benar di tengah */
     z-index: 1000;
-    /* Supaya tetap di atas elemen lainnya */
     display: flex;
     gap: 10px;
-    width: auto;
-    /* Atur agar tombol tidak memenuhi layar */
 }
 
 /* Aturan umum untuk tombol */
@@ -92,6 +91,17 @@ html {
     text-align: center;
     /* Tebal teks */
     color: black;
+    /* Warna teks */
+    white-space: nowrap;
+}
+
+.text-label-dua {
+    font-size: 26px;
+    /* Ukuran teks */
+    font-weight: 600;
+    text-align: center;
+    /* Tebal teks */
+    color: rgba(37, 37, 37, 0.226);
     /* Warna teks */
     white-space: nowrap;
 }
