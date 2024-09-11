@@ -10,6 +10,81 @@ html {
     height: 100vh;
 }
 
+.navbar {
+    z-index: 1100;
+    /* Pastikan navbar tetap berada di atas */
+}
+
+/* Memindahkan tombol ke bagian atas di bawah navbar */
+.bottom-buttons {
+    position: absolute;
+    /* Untuk membuat tombol berada di atas peta */
+    top: 70px;
+    /* Atur jarak dari navbar */
+    left: 50%;
+    /* Untuk menempatkan tombol di tengah secara horizontal */
+    transform: translateX(-50%);
+    /* Pastikan posisi benar-benar di tengah */
+    z-index: 1000;
+    /* Supaya tetap di atas elemen lainnya */
+    display: flex;
+    gap: 10px;
+    width: auto;
+    /* Atur agar tombol tidak memenuhi layar */
+}
+
+/* Aturan umum untuk tombol */
+.cb-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: #0080ff;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    white-space: nowrap;
+    /* Mencegah tombol membesar karena teks */
+}
+
+/* Hover efek */
+.cb-btn:hover {
+    background-color: #e2e6ea;
+}
+
+/* Khusus untuk dropdown toggle */
+.btn-group .cb-btn.dropdown-toggle {
+    border-radius: 0 50px 50px 0;
+    /* Hanya bagian kanan yang rounded */
+    padding-right: 20px;
+}
+
+/* Tombol pertama di grup dropdown */
+.btn-group .cb-btn:first-child {
+    border-radius: 50px 0 0 50px;
+    /* Hanya bagian kiri yang rounded */
+}
+
+.dropdown-menu {
+    border-radius: 0 0 10px 10px;
+    /* Supaya dropdown menu terlihat halus di bagian bawah */
+}
+
+/* Untuk tombol ungu */
+.cb-btn-purple {
+    background-color: #6c217f;
+}
+
+.cb-btn-purple:hover {
+    background-color: #843299;
+}
+
+.btn-group .cb-btn-purple.dropdown-toggle {
+    border-radius: 0 50px 50px 0;
+    /* Aturan untuk dropdown toggle yang ungu */
+}
+
+
 .text-label {
     font-size: 12px;
     /* Ukuran teks */
@@ -19,135 +94,4 @@ html {
     color: black;
     /* Warna teks */
     white-space: nowrap;
-    /* Mencegah teks terpotong */
-}
-
-/* Global style */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-}
-
-/* Style untuk Map */
-#map {
-    height: 90vh;
-    /* Menyisakan ruang untuk navbar */
-    width: 100%;
-}
-
-#map {
-    height: calc(100vh - 56px);
-    width: 100%;
-}
-
-.bottom-buttons {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    display: flex;
-    gap: 10px;
-}
-
-.cb-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    background-color: #f8f9fa;
-    color: #212529;
-    transition: all 0.3s ease;
-}
-
-.cb-btn:hover {
-    background-color: #e2e6ea;
-}
-
-.cb-btn-default {
-    background-color: #f8f9fa;
-    border: 1px solid #ced4da;
-}
-
-.dropdown-toggle::after {
-    display: none;
-}
-
-.dropdown-toggle {
-    padding: 10px;
-}
-
-.btn-group {
-    display: inline-flex;
-}
-
-.btn-group .cb-btn:first-child {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.btn-group .cb-btn:last-child {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-#map {
-    height: calc(100vh - 56px);
-    width: 100%;
-}
-
-.bottom-buttons {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    display: flex;
-    gap: 10px;
-}
-
-.cb-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    background-color: #f8f9fa;
-    color: #212529;
-    transition: all 0.3s ease;
-}
-
-.cb-btn:hover {
-    background-color: #e2e6ea;
-}
-
-.cb-btn-default {
-    background-color: #f8f9fa;
-    border: 1px solid #ced4da;
-}
-
-.dropdown-toggle::after {
-    display: none;
-}
-
-.dropdown-toggle {
-    padding: 10px;
-}
-
-.btn-group {
-    display: inline-flex;
-}
-
-.btn-group .cb-btn:first-child {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.btn-group .cb-btn:last-child {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
 }
