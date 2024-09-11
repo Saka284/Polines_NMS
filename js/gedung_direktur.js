@@ -59,86 +59,30 @@ export function initializeGedungDirektur(map) {
         interactive: false
     });
 
-    // Definisikan 5 ruangan di lantai 2
-    // var ruangan1 = L.polygon([
-    //     [-7.052100, 110.435300],
-    //     [-7.052100, 110.435400],
-    //     [-7.052200, 110.435400],
-    //     [-7.052200, 110.435300]
-    // ], {
-    //     color: 'rgb(0, 255, 0)',
-    //     fillColor: 'rgb(150, 255, 150)',
-    //     fillOpacity: 0.7
-    // });
+    function updateFloorVisibility(lantai) {
+        map.removeLayer(gedung_direktur);
+        map.removeLayer(teksGedung_direktur);
+        map.removeLayer(lantai1_direktur);
+        map.removeLayer(lantai2_direktur);
+        map.removeLayer(teksLantai1);
+        map.removeLayer(teksLantai2);
 
-    // var ruangan2 = L.polygon([
-    //     [-7.052100, 110.435400],
-    //     [-7.052100, 110.435500],
-    //     [-7.052200, 110.435500],
-    //     [-7.052200, 110.435400]
-    // ], {
-    //     color: 'rgb(0, 255, 0)',
-    //     fillColor: 'rgb(150, 255, 150)',
-    //     fillOpacity: 0.7
-    // });
-
-    // var ruangan3 = L.polygon([
-    //     [-7.052100, 110.435500],
-    //     [-7.052100, 110.435600],
-    //     [-7.052200, 110.435600],
-    //     [-7.052200, 110.435500]
-    // ], {
-    //     color: 'rgb(0, 255, 0)',
-    //     fillColor: 'rgb(150, 255, 150)',
-    //     fillOpacity: 0.7
-    // });
-
-    // var ruangan4 = L.polygon([
-    //     [-7.052300, 110.435300],
-    //     [-7.052300, 110.435400],
-    //     [-7.052400, 110.435400],
-    //     [-7.052400, 110.435300]
-    // ], {
-    //     color: 'rgb(0, 255, 0)',
-    //     fillColor: 'rgb(150, 255, 150)',
-    //     fillOpacity: 0.7
-    // });
-
-    // var ruangan5 = L.polygon([
-    //     [-7.052300, 110.435400],
-    //     [-7.052300, 110.435500],
-    //     [-7.052400, 110.435500],
-    //     [-7.052400, 110.435400]
-    // ], {
-    //     color: 'rgb(0, 255, 0)',
-    //     fillColor: 'rgb(150, 255, 150)',
-    //     fillOpacity: 0.7
-    // });
-
-
-    function updateFloorVisibility() {
-        var currentZoom = map.getZoom();
-        if (currentZoom >= 21) {
-            map.addLayer(lantai1_direktur);
-            map.addLayer(teksLantai1);
-            map.removeLayer(lantai2_direktur);
-            map.removeLayer(teksLantai2);
-            map.removeLayer(gedung_direktur);
-            map.removeLayer(teksGedung_direktur);
-        } else if (currentZoom >= 19) {
-            map.addLayer(lantai2_direktur);
-            map.addLayer(teksLantai2);
-            map.removeLayer(lantai1_direktur);
-            map.removeLayer(teksLantai1);
-            map.removeLayer(gedung_direktur);
-            map.removeLayer(teksGedung_direktur);
-        } else {
-            map.addLayer(gedung_direktur);
-            map.addLayer(teksGedung_direktur);
-            map.removeLayer(lantai1_direktur);
-            map.removeLayer(lantai2_direktur);
-            map.removeLayer(teksLantai1);
-            map.removeLayer(teksLantai2);
+        switch (lantai) {
+            case 0:
+                map.addLayer(gedung_direktur);
+                map.addLayer(teksGedung_direktur);
+                map.setView([-7.052305, 110.435501], 19);
+                break;
+            case 1:
+                map.addLayer(lantai1_direktur);
+                map.addLayer(teksLantai1);
+                map.setView([-7.052305, 110.435501], 21);
+                break;
+            case 2:
+                map.addLayer(lantai2_direktur);
+                map.addLayer(teksLantai2);
+                map.setView([-7.052305, 110.435501], 20);
+                break;
         }
     }
 

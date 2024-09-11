@@ -95,3 +95,59 @@ body {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+
+#map {
+    height: calc(100vh - 56px);
+    width: 100%;
+}
+
+.bottom-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+}
+
+.cb-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    color: #212529;
+    transition: all 0.3s ease;
+}
+
+.cb-btn:hover {
+    background-color: #e2e6ea;
+}
+
+.cb-btn-default {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-toggle {
+    padding: 10px;
+}
+
+.btn-group {
+    display: inline-flex;
+}
+
+.btn-group .cb-btn:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.btn-group .cb-btn:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
