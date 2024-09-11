@@ -26,7 +26,7 @@ export function initializeGedungDirektur(map) {
         [-7.052470, 110.435260]
     ], {
         color: 'rgb(255, 0, 0)',
-        fillColor: 'rgb(255, 150, 150)',
+        fillColor: 'rgb(255, 255, 225)',
         fillOpacity: 0.7
     });
 
@@ -37,7 +37,7 @@ export function initializeGedungDirektur(map) {
         [-7.052470, 110.435260]
     ], {
         color: 'rgb(0, 0, 255)',
-        fillColor: 'rgb(150, 150, 255)',
+        fillColor: 'rgb(255, 255, 255)',
         fillOpacity: 0.7
     });
 
@@ -59,33 +59,43 @@ export function initializeGedungDirektur(map) {
         interactive: false
     });
 
-    function updateFloorVisibility() {
-        var currentZoom = map.getZoom();
-        if (currentZoom >= 21) {
-            map.addLayer(lantai1_direktur);
-            map.addLayer(teksLantai1);
-            map.removeLayer(lantai2_direktur);
-            map.removeLayer(teksLantai2);
-            map.removeLayer(gedung_direktur);
-            map.removeLayer(teksGedung_direktur);
-        } else if (currentZoom >= 19) {
-            map.addLayer(lantai2_direktur);
-            map.addLayer(teksLantai2);
-            map.removeLayer(lantai1_direktur);
-            map.removeLayer(teksLantai1);
-            map.removeLayer(gedung_direktur);
-            map.removeLayer(teksGedung_direktur);
-        } else {
-            map.addLayer(gedung_direktur);
-            map.addLayer(teksGedung_direktur);
-            map.removeLayer(lantai1_direktur);
-            map.removeLayer(lantai2_direktur);
-            map.removeLayer(teksLantai1);
-            map.removeLayer(teksLantai2);
+    function updateFloorVisibility(lantai) {
+        map.removeLayer(gedung_direktur);
+        map.removeLayer(teksGedung_direktur);
+        map.removeLayer(lantai1_direktur);
+        map.removeLayer(lantai2_direktur);
+        map.removeLayer(teksLantai1);
+        map.removeLayer(teksLantai2);
+
+        switch (lantai) {
+            case 0:
+                map.addLayer(gedung_direktur);
+                map.addLayer(teksGedung_direktur);
+                map.setView([-7.052305, 110.435501], 19);
+                break;
+            case 1:
+                map.addLayer(lantai1_direktur);
+                map.addLayer(teksLantai1);
+                map.setView([-7.052305, 110.435501], 21);
+                break;
+            case 2:
+                map.addLayer(lantai2_direktur);
+                map.addLayer(teksLantai2);
+                map.setView([-7.052305, 110.435501], 20);
+                break;
         }
     }
 
-    map.on('zoomend', updateFloorVisibility);
+    map.on('zoomend', function () {
+        var currentZoom = map.getZoom();
+        if (currentZoom < 20) {
+            updateFloorVisibility(0);
+        } else if (currentZoom === 20) {
+            updateFloorVisibility(2);
+        } else if (currentZoom >= 21) {
+            updateFloorVisibility(1);
+        }
+    });
 
     gedung_direktur.on('click', function () {
         map.flyTo([-7.052305, 110.435501], 19, {
@@ -93,4 +103,11 @@ export function initializeGedungDirektur(map) {
             easeLinearity: 0.5,
         });
     });
+
+    // Fungsi navigasi yang akan dikembalikan
+    function navigateToGedungDirektur(lantai) {
+        updateFloorVisibility(lantai);
+    }
+
+    return navigateToGedungDirektur;
 }
