@@ -59,6 +59,63 @@ export function initializeGedungDirektur(map) {
         interactive: false
     });
 
+    // Definisikan 5 ruangan di lantai 2
+    // var ruangan1 = L.polygon([
+    //     [-7.052100, 110.435300],
+    //     [-7.052100, 110.435400],
+    //     [-7.052200, 110.435400],
+    //     [-7.052200, 110.435300]
+    // ], {
+    //     color: 'rgb(0, 255, 0)',
+    //     fillColor: 'rgb(150, 255, 150)',
+    //     fillOpacity: 0.7
+    // });
+
+    // var ruangan2 = L.polygon([
+    //     [-7.052100, 110.435400],
+    //     [-7.052100, 110.435500],
+    //     [-7.052200, 110.435500],
+    //     [-7.052200, 110.435400]
+    // ], {
+    //     color: 'rgb(0, 255, 0)',
+    //     fillColor: 'rgb(150, 255, 150)',
+    //     fillOpacity: 0.7
+    // });
+
+    // var ruangan3 = L.polygon([
+    //     [-7.052100, 110.435500],
+    //     [-7.052100, 110.435600],
+    //     [-7.052200, 110.435600],
+    //     [-7.052200, 110.435500]
+    // ], {
+    //     color: 'rgb(0, 255, 0)',
+    //     fillColor: 'rgb(150, 255, 150)',
+    //     fillOpacity: 0.7
+    // });
+
+    // var ruangan4 = L.polygon([
+    //     [-7.052300, 110.435300],
+    //     [-7.052300, 110.435400],
+    //     [-7.052400, 110.435400],
+    //     [-7.052400, 110.435300]
+    // ], {
+    //     color: 'rgb(0, 255, 0)',
+    //     fillColor: 'rgb(150, 255, 150)',
+    //     fillOpacity: 0.7
+    // });
+
+    // var ruangan5 = L.polygon([
+    //     [-7.052300, 110.435400],
+    //     [-7.052300, 110.435500],
+    //     [-7.052400, 110.435500],
+    //     [-7.052400, 110.435400]
+    // ], {
+    //     color: 'rgb(0, 255, 0)',
+    //     fillColor: 'rgb(150, 255, 150)',
+    //     fillOpacity: 0.7
+    // });
+
+
     function updateFloorVisibility() {
         var currentZoom = map.getZoom();
         if (currentZoom >= 21) {
@@ -68,9 +125,19 @@ export function initializeGedungDirektur(map) {
             map.removeLayer(teksLantai2);
             map.removeLayer(gedung_direktur);
             map.removeLayer(teksGedung_direktur);
+            // map.removeLayer(ruangan1);
+            // map.removeLayer(ruangan2);
+            // map.removeLayer(ruangan3);
+            // map.removeLayer(ruangan4);
+            // map.removeLayer(ruangan5);
         } else if (currentZoom >= 19) {
             map.addLayer(lantai2_direktur);
             map.addLayer(teksLantai2);
+            // map.addLayer(ruangan1);
+            // map.addLayer(ruangan2);
+            // map.addLayer(ruangan3);
+            // map.addLayer(ruangan4);
+            // map.addLayer(ruangan5);
             map.removeLayer(lantai1_direktur);
             map.removeLayer(teksLantai1);
             map.removeLayer(gedung_direktur);
@@ -82,6 +149,11 @@ export function initializeGedungDirektur(map) {
             map.removeLayer(lantai2_direktur);
             map.removeLayer(teksLantai1);
             map.removeLayer(teksLantai2);
+            // map.removeLayer(ruangan1);
+            // map.removeLayer(ruangan2);
+            // map.removeLayer(ruangan3);
+            // map.removeLayer(ruangan4);
+            // map.removeLayer(ruangan5);
         }
     }
 
