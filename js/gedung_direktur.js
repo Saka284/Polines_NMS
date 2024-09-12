@@ -10,17 +10,51 @@ export function initializeGedungDirektur(map) {
     const lantai2Coords = gedungDirekturCoords;
     const lantai1Coords = gedungDirekturCoords;
 
-    const ruanganCoords = [
-        { coords: [[-7.052105, 110.435280], [-7.052107, 110.435400], [-7.052150, 110.435400], [-7.052150, 110.435280]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
+    const ruanganCoordsLt1 = [
+        { coords: [[-7.052105, 110.435280], [-7.052107, 110.435400], [-7.052150, 110.435400], [-7.052150, 110.435280]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '', icon : '' },
+        { coords: [[-7.052107, 110.435400], [-7.052150, 110.435400], [-7.052150, 110.435430], [-7.052107, 110.435430]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '', icon : '' },
+        { coords: [[-7.052107, 110.435430], [-7.052170, 110.435430], [-7.052170, 110.435450], [-7.052107, 110.435450]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Rapat', icon : '/images/users.png' },
+        { coords: [[-7.052107, 110.435450], [-7.052150, 110.435450], [-7.052150, 110.435510], [-7.052110, 110.435510]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'WADIR III' },
+        { coords: [[-7.052100, 110.435510], [-7.052270, 110.435510], [-7.052270, 110.435560], [-7.052100, 110.435560]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'HALL' },
+        { coords: [[-7.052107, 110.435630], [-7.052170, 110.435630], [-7.052170, 110.435580], [-7.052107, 110.435580]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R.SPI' },
+        { coords: [[-7.052107, 110.435630], [-7.052170, 110.435630], [-7.052170, 110.435680], [-7.052107, 110.435680]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R.Rapat SPI', icon : '/images/home.png' },
+        { coords: [[-7.052107, 110.435680], [-7.052170, 110.435680], [-7.052170, 110.435730], [-7.052107, 110.435730]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'ULP', icon : '/images/home.png' },
+        { coords: [[-7.052195, 110.435690], [-7.052270, 110.435690], [-7.052270, 110.435730], [-7.052195, 110.435730]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Rapat', icon : '/images/users.png' },
+        { coords: [[-7.052195, 110.435650], [-7.052270, 110.435650], [-7.052270, 110.435690], [-7.052195, 110.435690]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'ULP', icon : '/images/home.png' },
+        { coords: [[-7.052195, 110.435630], [-7.052270, 110.435630], [-7.052270, 110.435590], [-7.052195, 110.435590]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
+        { coords: [[-7.052195, 110.435560], [-7.052270, 110.435560], [-7.052270, 110.435590], [-7.052195, 110.435590]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
+        { coords: [[-7.052195, 110.435450], [-7.052270, 110.435450], [-7.052270, 110.435510], [-7.052195, 110.435510]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'ULT' },
+        { coords: [[-7.052195, 110.435400], [-7.052235, 110.435400], [-7.052235, 110.435450], [-7.052195, 110.435450]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
+        { coords: [[-7.052235, 110.435400], [-7.052270, 110.435400], [-7.052270, 110.435450], [-7.052235, 110.435450]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
+        { coords: [[-7.052195, 110.435340], [-7.052195, 110.435400], [-7.052270, 110.435400], [-7.052270, 110.435340]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
+        { coords: [[-7.052195, 110.435280], [-7.052195, 110.435340], [-7.052270, 110.435340], [-7.052270, 110.435280]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
+        { coords: [[-7.052270, 110.435480], [-7.052340, 110.435480], [-7.052340, 110.435590], [-7.052270, 110.435590]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
+        { coords: [[-7.052270, 110.435400], [-7.052340, 110.435400], [-7.052340, 110.435480], [-7.052270, 110.435480]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
+        { coords: [[-7.052270, 110.435590], [-7.052270, 110.435630], [-7.052320, 110.435630], [-7.052320, 110.435590]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Rapat AD II-1/16', icon : '/images/users.png' },
+        { coords: [[-7.052340, 110.435530], [-7.052400, 110.435530], [-7.052400, 110.435590], [-7.052340, 110.435590]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Rumah Tangga' },
+        { coords: [[-7.052340, 110.435480], [-7.052400, 110.435480], [-7.052400, 110.435530], [-7.052340, 110.435530]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Counter Pelayanan' },
+        { coords: [[-7.052400, 110.435480], [-7.052460, 110.435480], [-7.052460, 110.435530], [-7.052400, 110.435530]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Keuangan', icon : '/images/computer.png' },
+        { coords: [[-7.052400, 110.435530], [-7.052460, 110.435530], [-7.052460, 110.435590], [-7.052400, 110.435590]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'WADIR II' },
+        { coords: [[-7.052340, 110.435340], [-7.052460, 110.435340], [-7.052460, 110.435480], [-7.052340, 110.435480]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Counter Pelayanan & BAKPK', icon : '/images/computer.png' },
+        { coords: [[-7.052400, 110.435340], [-7.052460, 110.435340], [-7.052460, 110.435380], [-7.052400, 110.435380]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Arsip' },
+        { coords: [[-7.052400, 110.435300], [-7.052460, 110.435300], [-7.052460, 110.435340], [-7.052400, 110.435340]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Periksa' },
+        { coords: [[-7.052340, 110.435300], [-7.052385, 110.435300], [-7.052385, 110.435340], [-7.052340, 110.435340]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Poliklinik' },
+        { coords: [[-7.052400, 110.435590], [-7.052460, 110.435590], [-7.052460, 110.435655], [-7.052400, 110.435655]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Rapat', icon : '/images/users.png' },
+        { coords: [[-7.052400, 110.435655], [-7.052460, 110.435655], [-7.052460, 110.435730], [-7.052400, 110.435730]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Gudang' },
+        { coords: [[-7.052340, 110.435655], [-7.052390, 110.435655], [-7.052390, 110.435730], [-7.052340, 110.435730]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Gudang' },
+    ];
+
+    const ruanganCoordsLt2 = [
+        { coords: [[-7.052105, 110.435280], [-7.052105, 110.435330], [-7.052150, 110.435330], [-7.052150, 110.435280]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
         { coords: [[-7.052107, 110.435400], [-7.052150, 110.435400], [-7.052150, 110.435430], [-7.052107, 110.435430]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
         { coords: [[-7.052107, 110.435430], [-7.052170, 110.435430], [-7.052170, 110.435450], [-7.052107, 110.435450]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Rapat' },
-        { coords: [[-7.052107, 110.435450], [-7.052150, 110.435450], [-7.052150, 110.435510], [-7.052110, 110.435510]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'WADIR III' },
+        { coords: [[-7.052107, 110.435450], [-7.052150, 110.435450], [-7.052150, 110.435510], [-7.052110, 110.435510]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
         { coords: [[-7.052100, 110.435510], [-7.052270, 110.435510], [-7.052270, 110.435560], [-7.052100, 110.435560]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'HALL' },
         { coords: [[-7.052107, 110.435630], [-7.052170, 110.435630], [-7.052170, 110.435580], [-7.052107, 110.435580]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R.SPI' },
         { coords: [[-7.052107, 110.435630], [-7.052170, 110.435630], [-7.052170, 110.435680], [-7.052107, 110.435680]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R.Rapat SPI' },
         { coords: [[-7.052107, 110.435680], [-7.052170, 110.435680], [-7.052170, 110.435730], [-7.052107, 110.435730]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'ULP' },
-        { coords: [[-7.052195, 110.435690], [-7.052270, 110.435690], [-7.052270, 110.435730], [-7.052195, 110.435730]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Rapat' },
-        { coords: [[-7.052195, 110.435650], [-7.052270, 110.435650], [-7.052270, 110.435690], [-7.052195, 110.435690]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'ULP' },
+        { coords: [[-7.052195, 110.435690], [-7.052270, 110.435690], [-7.052270, 110.435730], [-7.052195, 110.435730]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Rapat', icon : '' },
+        { coords: [[-7.052195, 110.435650], [-7.052270, 110.435650], [-7.052270, 110.435690], [-7.052195, 110.435690]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'ULP', icon : '' },
         { coords: [[-7.052195, 110.435630], [-7.052270, 110.435630], [-7.052270, 110.435590], [-7.052195, 110.435590]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
         { coords: [[-7.052195, 110.435560], [-7.052270, 110.435560], [-7.052270, 110.435590], [-7.052195, 110.435590]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '' },
         { coords: [[-7.052195, 110.435450], [-7.052270, 110.435450], [-7.052270, 110.435510], [-7.052195, 110.435510]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'ULT' },
@@ -92,25 +126,62 @@ export function initializeGedungDirektur(map) {
     });
 
     // Create the room polygons
-    const ruanganLayers = ruanganCoords.map(room => {
+    const ruanganLayersLt1 = ruanganCoordsLt1.map(room => {
         const polygon = L.polygon(room.coords, {
             color: room.color,
             fillColor: room.fillColor,
             fillOpacity: 0.7
         });
-
+    
+        // Create a marker for the room with optional icon and text
         const textMarker = L.marker([
             (room.coords[0][0] + room.coords[2][0]) / 2, 
             (room.coords[0][1] + room.coords[2][1]) / 2
         ], {
             icon: L.divIcon({
                 className: 'text-label',
-                html: room.text,
-                iconSize: [80, 20]
+                html: `
+                    <div style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 60px;">
+                        ${room.icon ? `<img src="${room.icon}" style="width: 20px; height: 20px;" />` : ''}
+                        ${room.text ? `<div style="margin-top: 4px; font-size: 10px; color: black;">${room.text}</div>` : ''}
+                    </div>`,
+                iconSize: [80, 60], // Adjust iconSize to fit the icon and text
+                iconAnchor: [40, 30], // Adjust iconAnchor to center the icon properly
+                popupAnchor: [0, -60] // Adjust popupAnchor if you want to position the popup differently
             }),
             interactive: false
         });
+    
+        return { polygon, textMarker };
+    });    
+    
 
+    const ruanganLayersLt2 = ruanganCoordsLt2.map(room => {
+        const polygon = L.polygon(room.coords, {
+            color: room.color,
+            fillColor: room.fillColor,
+            fillOpacity: 0.7
+        });
+    
+        // Create a marker for the room with optional icon and text
+        const textMarker = L.marker([
+            (room.coords[0][0] + room.coords[2][0]) / 2, 
+            (room.coords[0][1] + room.coords[2][1]) / 2
+        ], {
+            icon: L.divIcon({
+                className: 'text-label',
+                html: `
+                    <div style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 60px;">
+                        ${room.icon ? `<img src="${room.icon}" style="width: 20px; height: 20px;" />` : ''}
+                        ${room.text ? `<div style="margin-top: 4px; font-size: 10px; color: black;">${room.text}</div>` : ''}
+                    </div>`,
+                iconSize: [80, 60], // Adjust iconSize to fit the icon and text
+                iconAnchor: [40, 30], // Adjust iconAnchor to center the icon properly
+                popupAnchor: [0, -60] // Adjust popupAnchor if you want to position the popup differently
+            }),
+            interactive: false
+        });
+    
         return { polygon, textMarker };
     });
 
@@ -124,7 +195,11 @@ export function initializeGedungDirektur(map) {
         map.removeLayer(lantai2Direktur);
         map.removeLayer(teksLantai1);
         map.removeLayer(teksLantai2);
-        ruanganLayers.forEach(layer => {
+        ruanganLayersLt1.forEach(layer => {
+            map.removeLayer(layer.polygon);
+            map.removeLayer(layer.textMarker);
+        });
+        ruanganLayersLt2.forEach(layer => {
             map.removeLayer(layer.polygon);
             map.removeLayer(layer.textMarker);
         });
@@ -140,7 +215,7 @@ export function initializeGedungDirektur(map) {
             case 1:
                 map.addLayer(lantai1Direktur);
                 map.addLayer(teksLantai1);
-                ruanganLayers.forEach(layer => {
+                ruanganLayersLt1.forEach(layer => {
                     map.addLayer(layer.polygon);
                     map.addLayer(layer.textMarker);
                 });
@@ -149,6 +224,10 @@ export function initializeGedungDirektur(map) {
             case 2:
                 map.addLayer(lantai2Direktur);
                 map.addLayer(teksLantai2);
+                ruanganLayersLt2.forEach(layer => {
+                    map.addLayer(layer.polygon);
+                    map.addLayer(layer.textMarker);
+                });
                 map.setView([-7.052305, 110.435501], 21);
                 break;
         }
