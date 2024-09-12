@@ -3,7 +3,7 @@ export function initializeGedungGKS(map) {
     const gedungGKSCoords = [
         [-7.052203, 110.434865],
         [-7.052209, 110.435165],
-        [-7.052513, 110.435162],
+        [-7.052506, 110.435162],
         [-7.052502, 110.434858]
     ];
 
@@ -12,16 +12,18 @@ export function initializeGedungGKS(map) {
     const lantai1Coords = gedungGKSCoords;
 
     const ruanganCoordsgksLt1 = [
-        { coords: [[-7.052205, 110.434867], [-7.052207, 110.434971], [-7.052284, 110.434970], [-7.052282, 110.434865]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Lab upt Bahasa 1', icon: '' },
-        { coords: [[-7.052207, 110.434971], [-7.052209, 110.435071], [-7.052286, 110.435070], [-7.052284, 110.434970]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Lab upt Bahasa 2', icon: '' },
-        { coords: [[-7.052209, 110.435071], [-7.052210, 110.435112], [-7.052286, 110.435111], [-7.052286, 110.435070]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Adm<br>UPT BHS', icon: '' },
-        { coords: [[-7.052210, 110.435112], [-7.0522103, 110.435138], [-7.052256, 110.435138], [-7.052256, 110.435111]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Toilet', icon: '' },
-        { coords: [[-7.0522103, 110.435138], [-7.052211, 110.435163], [-7.052256, 110.435163], [-7.052256, 110.435138]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Toilet', icon: '' },
+        { coords: [[-7.052205, 110.434867], [-7.052207, 110.434971], [-7.052284, 110.434970], [-7.052282, 110.434865]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Lab upt Bahasa 1', icon: 'images/language.png' },
+        { coords: [[-7.052207, 110.434971], [-7.052209, 110.435071], [-7.052286, 110.435070], [-7.052284, 110.434970]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Lab upt Bahasa 2', icon: 'images/language.png' },
+        { coords: [[-7.052209, 110.435071], [-7.052210, 110.435112], [-7.052286, 110.435111], [-7.052286, 110.435070]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Adm<br>UPT BHS', icon: 'images/adminis.png' },
+        { coords: [[-7.052210, 110.435112], [-7.0522103, 110.435138], [-7.052256, 110.435138], [-7.052256, 110.435111]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Toilet', icon: 'images/toilet.png' },
+        { coords: [[-7.0522103, 110.435138], [-7.052211, 110.435163], [-7.052256, 110.435163], [-7.052256, 110.435138]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Toilet', icon: 'images/toilet.png' },
         { coords: [[-7.052266, 110.435138], [-7.052266, 110.435163], [-7.052286, 110.435163], [-7.052286, 110.435138]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Switch', icon: '' },
-        { coords: [[-7.052320, 110.434864], [-7.052320, 110.434971], [-7.052390, 110.434969], [-7.05239, 110.434862]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Gudang Arsip', icon: '' },
-        { coords: [[-7.052390, 110.434862], [-7.052390, 110.434969], [-7.052420, 110.434969], [-7.052420, 110.4348615]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Adm. Arsip', icon: '' },
-        { coords: [[-7.052420, 110.434862], [-7.052420, 110.434969], [-7.052450, 110.434969], [-7.052450, 110.4348610]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Adm. Arsip', icon: '' },
-        { coords: [[-7.052450, 110.434861], [-7.052450, 110.434969], [-7.052502, 110.434969], [-7.052499, 110.4348610]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Gudang Arsip', icon: '' },
+        { coords: [[-7.052320, 110.434864], [-7.052320, 110.434971], [-7.052390, 110.434969], [-7.05239, 110.434862]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Gudang Arsip', icon: 'images/archive.png' },
+        { coords: [[-7.052390, 110.434862], [-7.052390, 110.434969], [-7.052420, 110.434969], [-7.052420, 110.4348615]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Adm. Arsip', icon: 'images/adminis.png' },
+        { coords: [[-7.052420, 110.434862], [-7.052420, 110.434969], [-7.052450, 110.434969], [-7.052450, 110.4348610]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Adm. Arsip', icon: 'images/adminis.png' },
+        { coords: [[-7.052450, 110.434861], [-7.052450, 110.434969], [-7.052502, 110.434969], [-7.052499, 110.4348610]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Gudang Arsip', icon: 'images/archive.png' },
+        { coords: [[-7.052450, 110.435010], [-7.052450, 110.435080], [-7.052502, 110.435080], [-7.052502, 110.435010]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Tamu Ka.<br> UPT BHS', icon: 'images/orang.png' },
+        { coords: [[-7.052450, 110.435080], [-7.052450, 110.435160], [-7.052502, 110.435160], [-7.052502, 110.435080]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Classroom', icon: 'images/classroom.png' },
 
     ];
 
@@ -149,17 +151,17 @@ export function initializeGedungGKS(map) {
                     map.addLayer(layer.polygon);
                     map.addLayer(layer.textMarker);
                 })
-                map.setView([-7.052358, 110.435002], 22);
+                map.setView([-7.052358, 110.435002], 21);
                 break;
             case 2:
                 map.addLayer(lantai2GKS);
                 map.addLayer(teksLantai2);
-                map.setView([-7.052358, 110.435002], 22);
+                map.setView([-7.052358, 110.435002], 21);
                 break;
             case 3:
                 map.addLayer(lantai3GKS);
                 map.addLayer(teksLantai3);
-                map.setView([-7.052358, 110.435002], 22);
+                map.setView([-7.052358, 110.435002], 21);
                 break;
         }
     }
