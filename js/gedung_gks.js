@@ -21,7 +21,8 @@ export function initializeGedungGKS(map) {
         interactive: false
     }).addTo(map);
 
-    // Defining polygons for each floor with unique colors
+    // Warna denah perlantai
+    //lantai 3
     var lantai3_gks = L.polygon([
         [-7.052203, 110.434865],
         [-7.052209, 110.435174],
@@ -33,6 +34,7 @@ export function initializeGedungGKS(map) {
         fillOpacity: 0.7
     });
 
+    // lantai 2
     var lantai2_gks = L.polygon([
         [-7.052203, 110.434865],
         [-7.052209, 110.435174],
@@ -44,6 +46,7 @@ export function initializeGedungGKS(map) {
         fillOpacity: 0.7
     });
 
+    //lantai 1
     var lantai1_gks = L.polygon([
         [-7.052203, 110.434865],
         [-7.052209, 110.435174],
@@ -55,7 +58,8 @@ export function initializeGedungGKS(map) {
         fillOpacity: 0.7
     });
 
-    // Markers for floor labels
+    // teks perlantai
+    //lantai 3
     var teksLantai3 = L.marker([-7.052358, 110.435002], {
         icon: L.divIcon({
             className: 'text-label-dua',
@@ -65,6 +69,7 @@ export function initializeGedungGKS(map) {
         interactive: false
     });
 
+    //lantai 2
     var teksLantai2 = L.marker([-7.052358, 110.435002], {
         icon: L.divIcon({
             className: 'text-label-dua',
@@ -74,6 +79,7 @@ export function initializeGedungGKS(map) {
         interactive: false
     });
 
+    //lantai 1
     var teksLantai1 = L.marker([-7.052358, 110.435002], {
         icon: L.divIcon({
             className: 'text-label-dua',
@@ -83,10 +89,9 @@ export function initializeGedungGKS(map) {
         interactive: false
     });
 
-    // Track the current floor
     let currentLantai = 0;
 
-    // Function to update the visible floor
+    // fungsi untuk menganti tampilan lantai
     function updateFloorVisibility(lantai) {
         map.removeLayer(gedung_gks);
         map.removeLayer(teksGedung_gks);
@@ -123,19 +128,9 @@ export function initializeGedungGKS(map) {
         }
     }
 
-    // Zoom handler to show/hide floors
-    map.on('zoomend', function () {
-        var currentZoom = map.getZoom();
-        if (currentZoom < 20) {
-            updateFloorVisibility(0);  // Show the whole building if zoom level is below 20
-        } else if (currentZoom === 20 && currentLantai !== 0) {
-            updateFloorVisibility(0);  // Reset to the whole building on zoom 20
-        }
-    });
-
     // Click event to zoom into the building
     gedung_gks.on('click', function () {
-        map.flyTo([-7.052358, 110.435002], 19, {
+        map.flyTo([-7.052355, 110.434898], 18, {
             duration: 2,
             easeLinearity: 0.5,
         });

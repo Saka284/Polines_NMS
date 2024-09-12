@@ -58,3 +58,19 @@ document.querySelectorAll('.dropdown-item').forEach(item => {
         navigateToGedung(gedung, lantai);
     });
 });
+
+//fungsi dropdown agar kelihatan currently selected
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const allItems = this.closest('.dropdown-menu').querySelectorAll('.dropdown-item');
+            allItems.forEach(i => i.classList.remove('selected'));
+
+            this.classList.add('selected');
+        });
+    });
+});

@@ -12,7 +12,6 @@ html {
 
 .navbar {
     padding: 20px 0;
-    /* Sesuaikan padding untuk memperbesar navbar */
 }
 
 /* Gambar logo di navbar */
@@ -34,7 +33,6 @@ html {
 .bottom-buttons {
     position: absolute;
     top: 100px;
-    /* Beri jarak dari atas (sesuaikan sesuai kebutuhan) */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -53,7 +51,6 @@ html {
     transition: all 0.3s ease;
     border-radius: 50px;
     white-space: nowrap;
-    /* Mencegah tombol membesar karena teks */
 }
 
 /* Hover efek */
@@ -61,25 +58,20 @@ html {
     background-color: #e2e6ea;
 }
 
-/* Khusus untuk dropdown toggle */
 .btn-group .cb-btn.dropdown-toggle {
     border-radius: 0 50px 50px 0;
-    /* Hanya bagian kanan yang rounded */
     padding-right: 20px;
 }
 
-/* Tombol pertama di grup dropdown */
 .btn-group .cb-btn:first-child {
+    /*rounded*/
     border-radius: 50px 0 0 50px;
-    /* Hanya bagian kiri yang rounded */
 }
 
 .dropdown-menu {
     border-radius: 0 0 10px 10px;
-    /* Supaya dropdown menu terlihat halus di bagian bawah */
 }
 
-/* Untuk tombol ungu */
 .cb-btn-purple {
     background-color: #6c217f;
 }
@@ -90,20 +82,17 @@ html {
 
 .btn-group .cb-btn-purple.dropdown-toggle {
     border-radius: 0 50px 50px 0;
-    /* Aturan untuk dropdown toggle yang ungu */
 }
 
 .text-label {
     font-size: 12px;
-    /* Ukuran teks */
     font-weight: 550;
     text-align: center;
-    /* Tebal teks */
     color: black;
-    /* Warna teks */
     white-space: nowrap;
 }
 
+/* warna text label*/
 .text-label-dua {
     font-size: 26px;
     /* Ukuran teks */
@@ -113,4 +102,10 @@ html {
     color: rgba(37, 37, 37, 0.226);
     /* Warna teks */
     white-space: nowrap;
+}
+
+/* Hilight di dropdown */
+.dropdown-item.selected {
+    background-color: rgb(63, 138, 125);
+    color: #ffffff;
 }
