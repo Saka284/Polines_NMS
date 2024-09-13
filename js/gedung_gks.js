@@ -3,7 +3,7 @@ export function initializeGedungGKS(map) {
     const gedungGKSCoords = [
         [-7.052203, 110.434865],
         [-7.052209, 110.435165],
-        [-7.052506, 110.435162],
+        [-7.052504, 110.435162],
         [-7.052502, 110.434858]
     ];
 
@@ -21,10 +21,41 @@ export function initializeGedungGKS(map) {
         { coords: [[-7.052320, 110.434864], [-7.052320, 110.434971], [-7.052390, 110.434969], [-7.05239, 110.434862]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Gudang Arsip', icon: 'images/archive.png' },
         { coords: [[-7.052390, 110.434862], [-7.052390, 110.434969], [-7.052420, 110.434969], [-7.052420, 110.4348615]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Adm. Arsip', icon: 'images/adminis.png' },
         { coords: [[-7.052420, 110.434862], [-7.052420, 110.434969], [-7.052450, 110.434969], [-7.052450, 110.4348610]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Adm. Arsip', icon: 'images/adminis.png' },
-        { coords: [[-7.052450, 110.434861], [-7.052450, 110.434969], [-7.052502, 110.434969], [-7.052499, 110.4348610]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Gudang Arsip', icon: 'images/archive.png' },
+        { coords: [[-7.052450, 110.434861], [-7.052450, 110.434969], [-7.052502, 110.434969], [-7.052500, 110.4348601]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Gudang Arsip', icon: 'images/archive.png' },
         { coords: [[-7.052450, 110.435010], [-7.052450, 110.435080], [-7.052502, 110.435080], [-7.052502, 110.435010]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Tamu Ka.<br> UPT BHS', icon: 'images/orang.png' },
         { coords: [[-7.052450, 110.435080], [-7.052450, 110.435160], [-7.052502, 110.435160], [-7.052502, 110.435080]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Classroom', icon: 'images/classroom.png' },
 
+    ];
+
+    const ruanganCoordsgksLt2 = [
+        //P3M
+        { coords: [[-7.052205, 110.434867], [-7.052207, 110.434971], [-7.052304, 110.434970], [-7.052302, 110.434865]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'P3M', icon: 'images/research.png' },
+        //Pendaftaran
+        { coords: [[-7.052207, 110.434971], [-7.052209, 110.435061], [-7.052242, 110.435060], [-7.052240, 110.434971]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Pendaftaran', icon: 'images/pendaftaran.png' },
+        //Toilet
+        { coords: [[-7.052210, 110.435100], [-7.052211, 110.435163], [-7.052256, 110.435163], [-7.052256, 110.435100]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Toilet', icon: 'images/toilet.png' },
+        //Teknisi
+        { coords: [[-7.052256, 110.435138], [-7.052256, 110.435163], [-7.052278, 110.435163], [-7.052278, 110.435138]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Teknisi', icon: '' },
+        //Tax Center
+        { coords: [[-7.052302, 110.434865], [-7.0523039, 110.434970], [-7.052390, 110.434969], [-7.05239, 110.434862]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Tax Center', icon: 'images/tax.png' },
+        //R.Ka.UPA. TIK
+        { coords: [[-7.052390, 110.434862], [-7.052390, 110.434969], [-7.052420, 110.434969], [-7.052420, 110.4348615]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R.Ka.UPA. TIK', icon: 'images/room.png' },
+        //Class S.A.C
+        { coords: [[-7.052420, 110.434862], [-7.052420, 110.434969], [-7.052450, 110.434969], [-7.052450, 110.4348610]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Class S.A.C', icon: 'images/classroom.png' },
+        //Lab. S.A.C
+        { coords: [[-7.052450, 110.434861], [-7.052450, 110.434969], [-7.052501, 110.434968], [-7.052500, 110.4348601]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Lab. S.A.C', icon: 'images/lab.png' },
+        //R. Pameran
+        { coords: [[-7.052425, 110.435010], [-7.052425, 110.435080], [-7.052502, 110.435080], [-7.052502, 110.435010]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Pameran', icon: 'images/orang.png' },
+        //UPA TIK
+        { coords: [[-7.052425, 110.435080], [-7.052425, 110.435160], [-7.052502, 110.435160], [-7.052502, 110.435080]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'UPA TIK', icon: 'images/classroom.png' },
+        //R. Baca UPT BHS
+        { coords: [[-7.052466, 110.434939], [-7.052466, 110.434969], [-7.052501, 110.434968], [-7.052500, 110.434939]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Baca<br>UPT BHS', icon: 'images/buku.png' },
+        //R. Ka. UPT BHS
+        { coords: [[-7.052460, 110.434969], [-7.052460, 110.435010], [-7.052501, 110.435010], [-7.052501, 110.434968]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Ka.<br>UPT BHS', icon: 'images/room.png' },
+        //Data Center
+        { coords: [[-7.052320, 110.435090], [-7.052320, 110.435163], [-7.052396, 110.435162], [-7.052396, 110.435090]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Data Center', icon: 'images/datacenter.png' },
+        //Class
+        { coords: [[-7.052278, 110.435090], [-7.052278, 110.435138], [-7.052310, 110.435138], [-7.052310, 110.435090]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Class', icon: 'images/classroom.png' },
     ];
 
     // Create the polygon layers
@@ -96,6 +127,7 @@ export function initializeGedungGKS(map) {
             fillOpacity: 0.7
         });
 
+
         // Create a marker for the room with optional icon and text
         const textMarker = L.marker([
             (room.coords[0][0] + room.coords[2][0]) / 2,
@@ -118,6 +150,34 @@ export function initializeGedungGKS(map) {
         return { polygon, textMarker };
     });
 
+    const ruanganLayersgksLt2 = ruanganCoordsgksLt2.map(room => {
+        const polygon = L.polygon(room.coords, {
+            color: room.color,
+            fillColor: room.fillColor,
+            fillOpacity: 0.7
+        });
+
+        // Create a marker for the room with optional icon and text
+        const textMarker = L.marker([
+            (room.coords[0][0] + room.coords[2][0]) / 2,
+            (room.coords[0][1] + room.coords[2][1]) / 2
+        ], {
+            icon: L.divIcon({
+                className: 'text-label',
+                html: `
+                    <div style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 60px;">
+                        ${room.icon ? `<img src="${room.icon}" style="width: 20px; height: 20px;" />` : ''}
+                        ${room.text ? `<div style="margin-top: 4px; font-size: 10px; color: black;">${room.text}</div>` : ''}
+                    </div>`,
+                iconSize: [80, 60], // Adjust iconSize to fit the icon and text
+                iconAnchor: [40, 30], // Adjust iconAnchor to center the icon properly
+                popupAnchor: [0, -60] // Adjust popupAnchor if you want to position the popup differently
+            }),
+            interactive: false
+        });
+
+        return { polygon, textMarker };
+    });
 
     let currentLantai = 0;
 
@@ -132,6 +192,10 @@ export function initializeGedungGKS(map) {
         map.removeLayer(teksLantai2);
         map.removeLayer(teksLantai3);
         ruanganLayersgksLt1.forEach(layer => {
+            map.removeLayer(layer.polygon);
+            map.removeLayer(layer.textMarker);
+        });
+        ruanganLayersgksLt2.forEach(layer => {
             map.removeLayer(layer.polygon);
             map.removeLayer(layer.textMarker);
         });
@@ -156,6 +220,10 @@ export function initializeGedungGKS(map) {
             case 2:
                 map.addLayer(lantai2GKS);
                 map.addLayer(teksLantai2);
+                ruanganLayersgksLt2.forEach(layer => {
+                    map.addLayer(layer.polygon);
+                    map.addLayer(layer.textMarker);
+                })
                 map.setView([-7.052358, 110.435002], 21);
                 break;
             case 3:

@@ -2,6 +2,7 @@ import { initializeGedungGKS } from './gedung_gks.js';
 import { initializeGedungDirektur } from './gedung_direktur.js';
 
 var map = L.map('map', {
+    zoomControl: false,
     center: [-7.052120379739278, 110.4355867990092],
     zoom: 18,
     minZoom: 18,
