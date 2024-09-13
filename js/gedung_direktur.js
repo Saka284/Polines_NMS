@@ -181,25 +181,89 @@ export function initializeGedungDirektur(map) {
 
     let currentLantai = 0;
 
+    //Garis route
+    const routers = [
+        { id: 1, coords: [-7.052145, 110.435370], name: 'Router 1', icon: '/images/computer.png' },
+        { id: 2, coords: [-7.052160, 110.435485], name: 'Router 2', icon: '/images/computer.png' },
+        { id: 3, coords: [-7.052290, 110.435600], name: 'Router 3', icon: '/images/computer.png' },
+        { id: 4, coords: [-7.052350, 110.435320], name: 'Router 4', icon: '/images/computer.png' }
+    ];
+    
+    // Define connections between routers
+    const routerConnections = [
+        { from: 1, to: 2 },
+        { from: 4, to: 3 },
+        { from: 1, to: 4 },
+        // { from: 1, to: 3 } // You can define more connections as needed
+    ];
+    
+    const routerLayer = routers.map(router => {
+        // Create a marker for each router
+        const marker = L.marker(router.coords, {
+            icon: L.divIcon({
+                className: 'text-label',
+                html: `
+                    <div style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        ${router.icon ? `<img src="${router.icon}" style="width: 30px; height: 30px;" />` : ''}
+                        <div style="margin-top: 4px; font-size: 12px; color: black;">${router.name}</div>
+                    </div>`,
+                iconSize: [80, 60],
+                iconAnchor: [40, 30]
+            })
+        });
+        return marker;
+    });
+    
+    // Create connections (lines) between routers
+    const connectionLayer = routerConnections.map(connection => {
+        const fromRouter = routers.find(router => router.id === connection.from);
+        const toRouter = routers.find(router => router.id === connection.to);
+    
+        const polyline = L.polyline([fromRouter.coords, toRouter.coords], {
+            color: 'rgb(0, 0, 255)', // Connection line color
+            weight: 3, // Line thickness
+            opacity: 0.9 // Line opacity
+        });
+    
+        return polyline;
+    });
+    
+    // Add router markers and connections to the map
+    
+    
+    // // Optional: Add popups to show router details when clicked
+    routerLayer.forEach((marker, index) => {
+        marker.bindPopup(`<strong>${routers[index].name}</strong><br>Coordinates: ${routers[index].coords}`).openPopup();
+    });
+    
+
     // Function to update floor visibility
     function updateFloorVisibility(lantai) {
-        map.removeLayer(gedungDirektur);
-        map.removeLayer(teksGedungDirektur);
-        map.removeLayer(lantai1Direktur);
-        map.removeLayer(lantai2Direktur);
-        map.removeLayer(teksLantai1);
-        map.removeLayer(teksLantai2);
-        ruanganLayersLt1.forEach(layer => {
-            map.removeLayer(layer.polygon);
-            map.removeLayer(layer.textMarker);
+        // Remove all layers that are not needed
+        const layersToRemove = [
+            gedungDirektur,
+            teksGedungDirektur,
+            lantai1Direktur,
+            lantai2Direktur,
+            teksLantai1,
+            teksLantai2,
+            ...ruanganLayersLt1.map(layer => layer.polygon),
+            ...ruanganLayersLt1.map(layer => layer.textMarker),
+            ...ruanganLayersLt2.map(layer => layer.polygon),
+            ...ruanganLayersLt2.map(layer => layer.textMarker),
+            ...routerLayer,
+            ...connectionLayer
+        ];
+    
+        layersToRemove.forEach(layer => {
+            if (layer) {
+                map.removeLayer(layer);
+            }
         });
-        ruanganLayersLt2.forEach(layer => {
-            map.removeLayer(layer.polygon);
-            map.removeLayer(layer.textMarker);
-        });
-
+    
+        // Add the current layer based on the selected floor
         currentLantai = lantai;
-
+    
         switch (lantai) {
             case 0:
                 map.addLayer(gedungDirektur);
@@ -222,10 +286,16 @@ export function initializeGedungDirektur(map) {
                     map.addLayer(layer.polygon);
                     map.addLayer(layer.textMarker);
                 });
+                routerLayer.forEach(marker => {
+                    marker.addTo(map);
+                });
+                connectionLayer.forEach(polyline => {
+                    polyline.addTo(map);
+                });
                 map.setView([-7.052305, 110.435501], 21);
                 break;
         }
-    }
+    }    
 
     // Event listener for zoom level changes
     map.on('zoomend', function () {
