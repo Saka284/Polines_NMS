@@ -75,6 +75,22 @@ export function initializeGedungGKS(map) {
         { coords: [[-7.052420, 110.435105], [-7.052420, 110.435160], [-7.052450, 110.435160], [-7.052450, 110.435105]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Dosen', icon: 'images/room.png' },
         //lobby
         { coords: [[-7.052304, 110.434950], [-7.0523039, 110.435008], [-7.052411, 110.435008], [-7.05241, 110.434949]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: '', icon: '' },
+        //meeting room
+        { coords: [[-7.0523039, 110.434950], [-7.0523039, 110.435008], [-7.052340, 110.435008], [-7.052340, 110.434949]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Meeting Room', icon: '' },
+        //R. Control
+        { coords: [[-7.052340, 110.434950], [-7.052340, 110.434985], [-7.052370, 110.434985], [-7.052370, 110.434949]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Kontrol', icon: '' },
+        //R. control S.2
+        { coords: [[-7.052431, 110.434970], [-7.052431, 110.435008], [-7.052460, 110.435008], [-7.052460, 110.434970]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Kontrol', icon: '' },
+        //Editing Room
+        { coords: [[-7.052207, 110.434951], [-7.052208, 110.435001], [-7.052270, 110.435000], [-7.052270, 110.4349501]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Editing', icon: 'images/editing.png' },
+        //Dubbing Room
+        { coords: [[-7.052208, 110.435001], [-7.052209, 110.435051], [-7.052270, 110.435050], [-7.052270, 110.435000]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Dubbing', icon: 'images/classroom.png' },
+        //R. Dosen
+        { coords: [[-7.052209, 110.435051], [-7.052210, 110.435101], [-7.052270, 110.435100], [-7.052270, 110.435050]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'R. Dosen', icon: 'images/classroom.png' },
+        //Toilet
+        { coords: [[-7.052210, 110.435101], [-7.052211, 110.435163], [-7.052270, 110.435163], [-7.052270, 110.435100]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Toilet', icon: 'images/toilet.png' },
+        //Make Up room
+        { coords: [[-7.052270, 110.435104], [-7.052270, 110.435163], [-7.052320, 110.435163], [-7.052320, 110.435104]], color: 'rgb(0, 255, 0)', fillColor: 'rgb(150, 255, 150)', text: 'Makeup room', icon: 'images/classroom.png' },
     ];
 
     // Create the polygon layers
